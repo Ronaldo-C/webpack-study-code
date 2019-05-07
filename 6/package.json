@@ -1,0 +1,17 @@
+{
+  "name": "lessens",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "bundle": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "file-loader": "^3.0.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
