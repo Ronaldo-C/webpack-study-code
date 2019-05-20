@@ -1,23 +1,20 @@
-// import './index.css'
+// import '@babel/polyfill'
+let arr = [
+	new Promise(() => {}),
+	new Promise(() => {}),
+]
 
-// var btn = document.createElement('button')
-// btn.innerHTML = '新增'
-// document.body.appendChild(btn)
-// btn.onclick = function () {
-// 	var div = document.createElement('div')
-// 	div.innerHTML = 'item'
-// 	document.body.appendChild(div)
+arr.map(item => console.log(item))
+// import React, { Component } from 'react'
+// import ReactDOM from 'react-dom'
+
+// class App extends Component {
+// 	render() {
+// 		return <div>Hello World</div>
+// 	}
 // }
 
-import counter from './counter.js'
-import number from './number.js'
-
-counter()
-number()
-
-if(module.hot) {
-	module.hot.accept('./number.js', () => {
-		document.body.removeChild(document.getElementById('number'))
-		number()
-	})
-}
+// ReactDOM.render(
+// 	<h1>Hello, world!</h1>,
+// 	document.getElementById('root')
+//   );

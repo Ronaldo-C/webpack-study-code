@@ -1,23 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const webpack = require('webpack')
 
 module.exports = {
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
     // development模式：cheap-module-eval-source-map
     // production模式：cheap-module-source-map
     context: path.resolve(__dirname, 'src'),
     entry: {
         dist: './index.js',
-    },
-    devServer: {
-        contentBase: './dist',
-        // open: true,
-        port: 3000,
-        hot: true, //开启HMR功能
-        hotOnly: true //即使HMR功能没有生效，也不让浏览器自动重新刷新
     },
     output: {
         // publicPath: '/',
@@ -86,7 +75,5 @@ module.exports = {
             // title: 'webpack-study',
             template: './index.html',
         }),
-        new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
 }
