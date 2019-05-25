@@ -4,14 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     // development模式：cheap-module-eval-source-map
     // production模式：cheap-module-source-map
-    context: path.resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, '../src'),
     entry: {
         dist: './index.js',
     },
     output: {
         // publicPath: '/',
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
     module: {
         rules: [
@@ -73,7 +73,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             // title: 'webpack-study',
-            template: './index.html',
+            template: '../src/index.html',
         }),
     ],
 }

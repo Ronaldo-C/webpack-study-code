@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6cbdbbfbbfc8249fd931";
+/******/ 	var hotCurrentHash = "d4cab80c150b7a3e94b0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -258,7 +258,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "dist";
+/******/ 			var chunkId = "main";
 /******/ 			// eslint-disable-next-line no-lone-blocks
 /******/ 			{
 /******/ 				/*globals chunkId */
@@ -797,25 +797,11 @@
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! no exports provided */
+/*! no static exports found */
 /*! all exports used */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math */ \"./math.js\");\n\nObject(_math__WEBPACK_IMPORTED_MODULE_0__[/* add */ \"a\"])(1, 7);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9pbmRleC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2luZGV4LmpzPzQxZjUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgYWRkIH0gZnJvbSAnLi9tYXRoJ1xyXG5cclxuYWRkKDEsIDcpIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFFQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./index.js\n");
-
-/***/ }),
-
-/***/ "./math.js":
-/*!*****************!*\
-  !*** ./math.js ***!
-  \*****************/
-/*! exports provided: add, minus */
-/*! exports used: add */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return add; });\n/* unused harmony export minus */\nvar add = function add(a, b) {\n  document.write(a + b);\n};\nvar minus = function minus(a, b) {\n  document.write(a - b);\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9tYXRoLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vbWF0aC5qcz85OTJmIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBhZGQgPSAoYSwgYikgPT4ge1xyXG4gICAgZG9jdW1lbnQud3JpdGUoYSArIGIpXHJcbn1cclxuXHJcbmV4cG9ydCBjb25zdCBtaW51cyA9IChhLCBiKSA9PiB7XHJcbiAgICBkb2N1bWVudC53cml0ZShhIC0gYilcclxufSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./math.js\n");
+eval("throw new Error(\"Module build failed (from ../node_modules/babel-loader/lib/index.js):\\nError: Cannot find module 'babel-plugin-dynamic-import-webpack' from 'C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18'\\n    at Function.module.exports [as sync] (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\resolve\\\\lib\\\\sync.js:58:15)\\n    at resolveStandardizedName (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\files\\\\plugins.js:101:31)\\n    at resolvePlugin (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\files\\\\plugins.js:54:10)\\n    at loadPlugin (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\files\\\\plugins.js:62:20)\\n    at createDescriptor (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-descriptors.js:154:9)\\n    at items.map (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-descriptors.js:109:50)\\n    at Array.map (<anonymous>)\\n    at createDescriptors (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-descriptors.js:109:29)\\n    at createPluginDescriptors (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-descriptors.js:105:10)\\n    at plugins (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-descriptors.js:40:19)\\n    at mergeChainOpts (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-chain.js:319:26)\\n    at C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-chain.js:283:7\\n    at buildRootChain (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\config-chain.js:120:22)\\n    at loadPrivatePartialConfig (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\partial.js:85:55)\\n    at Object.loadPartialConfig (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\config\\\\partial.js:110:18)\\n    at Object.<anonymous> (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:144:26)\\n    at Generator.next (<anonymous>)\\n    at asyncGeneratorStep (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:3:103)\\n    at _next (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:5:194)\\n    at C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:5:364\\n    at new Promise (<anonymous>)\\n    at Object.<anonymous> (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:5:97)\\n    at Object._loader (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:224:18)\\n    at Object.loader (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:60:18)\\n    at Object.<anonymous> (C:\\\\Users\\\\12039\\\\Desktop\\\\webpack\\\\18\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:55:12)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9pbmRleC5qcy5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./index.js\n");
 
 /***/ })
 
