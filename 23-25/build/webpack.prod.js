@@ -1,31 +1,35 @@
-const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const merge = require('webpack-merge')
 const commonConfig = require('./webpack.common.js')
-const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const devConfig = {
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+const prodConfig = {
+    mode: 'production',
+    devtool: 'cheap-module-source-map',
     // development模式：cheap-module-eval-source-map
     // production模式：cheap-module-source-map
-    devServer: {
-        contentBase: './dist',
-        open: true,
-        port: 3000,
-        hot: true, //开启HMR功能
-        // hotOnly: true //即使HMR功能没有生效，也不让浏览器自动重新刷新
-    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
     ],
+    output: {
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].chunk.js',
+    },
+    optimization: {
+        minimizer: [
+            new OptimizeCSSAssetsPlugin({})
+        ],
+    },
     module: {
         rules: [
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -40,13 +44,13 @@ const devConfig = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader'
                 ]
             },
-        ]
+        ],
     }
 }
 
-module.exports = merge(commonConfig, devConfig)
+module.exports = prodConfig

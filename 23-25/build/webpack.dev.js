@@ -16,6 +16,12 @@ const devConfig = {
         hot: true, //开启HMR功能
         // hotOnly: true //即使HMR功能没有生效，也不让浏览器自动重新刷新
     },
+    output: {
+        // publicPath: '/',
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js', //在打包后入口文件中引入的模块文件名使用chunkFilename配置
+        path: path.resolve(__dirname, '../dist')
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
@@ -49,4 +55,4 @@ const devConfig = {
     }
 }
 
-module.exports = merge(commonConfig, devConfig)
+module.exports = devConfig
