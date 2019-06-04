@@ -7,7 +7,6 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "webpack --config ./build/webpack.common.js",
     "start": "webpack-dev-server --config ./build/webpack.common.js",
     "build": "webpack --env.production --config ./build/webpack.common.js"
   },
@@ -43,7 +42,8 @@
     "webpack-cli": "^3.3.2",
     "webpack-dev-middleware": "^3.6.2",
     "webpack-dev-server": "^3.3.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",

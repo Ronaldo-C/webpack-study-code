@@ -1,0 +1,8 @@
+{
+    "compilerOpitons": {
+        "outDir": "./dist", //把打包生成的文件放在dist目录下
+        "module": "es6", //支持用es Module的模块方法引入
+        "target": "es5", //把代码转换为es5语法
+        "allowJs": true //支持引入js文件
+    }
+}

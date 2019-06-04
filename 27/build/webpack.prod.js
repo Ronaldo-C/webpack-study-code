@@ -1,21 +1,29 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const merge = require('webpack-merge')
 const commonConfig = require('./webpack.common.js')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const prodConfig = {
     mode: 'production',
-    // devtool: 'cheap-module-source-map',
+    devtool: 'cheap-module-source-map',
     // development模式：cheap-module-eval-source-map
     // production模式：cheap-module-source-map
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[id].[contenthash].css',
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true
+        })
     ],
+    output: {
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].chunk.js',
+    },
     optimization: {
         minimizer: [
             new OptimizeCSSAssetsPlugin({})
@@ -50,4 +58,4 @@ const prodConfig = {
     }
 }
 
-module.exports = merge(commonConfig, prodConfig)
+module.exports = prodConfig
