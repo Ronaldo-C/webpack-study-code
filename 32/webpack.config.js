@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const addAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -10,36 +11,28 @@ module.exports = {
     // production模式：cheap-module-source-map
     context: path.resolve(__dirname, 'src'),
     entry: {
-        dist: './index.js',
+        index: './index.js',
+        list: './list.js'
     },
     devServer: {
         contentBase: './dist',
-        // open: true,
+        open: true,
         port: 3000,
         hot: true, //开启HMR功能
-        hotOnly: true, //即使HMR功能没有生效，也不让浏览器自动重新刷新
-        historyApiFallback: true, //任何url路径访问都会访问根路径html文件，从而使路由生效
-        proxy: {
-            '/react/api': {
-                target: 'https://www.dell-lee.com',//请求代理到的网址
-                secure: false, //可以对https生效
-                pathRewrite: { //对路径的重写
-                    'header.json': 'demo.json'
-                },
-                changeOrigin: true, //改变请求内origin的选项，使我们的代理支持更多的域名下请求的访问（针对一些反爬虫网站的设置）
-                headers: { //在请求头内自定义设置，模拟请求的配置
-                    host: 'www.dell-lee.com'
-                }
-            }
-        }
+        hotOnly: true //即使HMR功能没有生效，也不让浏览器自动重新刷新
     },
     output: {
-        // publicPath: '/',
+        // publicPath: './',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
+            {
+                test: /\.js?$/,
+                loaders: ['babel-loader'],
+                include: path.resolve(__dirname, 'src')
+            },
             {
                 test: /\.(jpg|png|gif)$/,
                 use: [
@@ -87,20 +80,34 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/, //排除node_modules文件中的js文件
-                loader: "babel-loader",
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             // title: 'webpack-study',
+            filename: 'index.html',
             template: './index.html',
+            chunks: ['react', 'vendors', 'index'],//需要引入的chunks
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'list.html',
+            template: './index.html',
+            chunks: ['react', 'vendors', 'list'],
         }),
         new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new addAssetHtmlWebpackPlugin({ //把生成的dll文件挂载到html文件中
+            filepath: path.resolve(__dirname, './dll/vendors.dll.js')
+        }),
+        new addAssetHtmlWebpackPlugin({ //把生成的dll文件挂载到html文件中
+            filepath: path.resolve(__dirname, './dll/react.dll.js')
+        }),
+        new webpack.DllReferencePlugin({ //分析引入映射文件
+            manifest: path.resolve(__dirname, './dll/vendors.manifest.json')
+        }),
+        new webpack.DllReferencePlugin({ //分析引入映射文件
+            manifest: path.resolve(__dirname, './dll/react.manifest.json')
+        })
     ]
 }
